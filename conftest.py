@@ -8,13 +8,17 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service as ChromeService
 
 
 @pytest.fixture(scope="session")
 def web_driver():
     chrome_options = Options()
     chrome_options.add_argument("--headless")
-    driver = webdriver.Chrome(options=chrome_options)
+    driver = webdriver.Chrome(
+        service=ChromeService(ChromeDriverManager().install()),
+        options=chrome_options)
     driver.maximize_window()
     driver.implicitly_wait(20)
     return driver
