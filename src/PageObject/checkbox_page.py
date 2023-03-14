@@ -10,10 +10,10 @@ class CheckboxPage:
     def __init__(self, driver):
         self.driver = driver
 
-    def wait_checkbox(self):
+    def wait_header(self):
         WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.XPATH,
-                                            Locators.e_header_elements))
+                                            Locators.c_header_elements))
         )
 
     def home(self):

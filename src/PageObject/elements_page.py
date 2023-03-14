@@ -19,7 +19,6 @@ class ElementsPage:
             )
         except Exception as e:
             logger.debug(e)
-            self.driver.close()
             return None
 
     def checkbox(self):

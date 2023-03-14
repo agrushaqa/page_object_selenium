@@ -10,7 +10,7 @@ class TestExpandCheckbox:
     def test_checkbox_home(self, web_driver, page_url):
         web_driver.get(page_url)
         checkbox_page = CheckboxPage(web_driver)
-        checkbox_page.wait_checkbox()
+        checkbox_page.wait_header()
         checkbox_page.home().click()
         assert checkbox_page.wait_label_desktop() is not None
         assert checkbox_page.wait_label_documents() is not None
@@ -21,7 +21,7 @@ class TestExpandCheckbox:
     def test_checkbox_download(self, web_driver, page_url):
         web_driver.get(page_url)
         checkbox_page = CheckboxPage(web_driver)
-        checkbox_page.wait_checkbox()
+        checkbox_page.wait_header()
         checkbox_page.home().click()
         checkbox_page.wait_label_downloads()
         checkbox_page.download().click()

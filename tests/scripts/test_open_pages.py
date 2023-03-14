@@ -27,5 +27,6 @@ class TestOpenPages:
         elements_page.wait_header()
         elements_page.checkbox().click()
         checkbox_page = CheckboxPage(web_driver)
-        checkbox_page.wait_checkbox()
+        checkbox_page.wait_header()
         assert web_driver.current_url == "https://demoqa.com/checkbox"
+

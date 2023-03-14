@@ -45,11 +45,11 @@ def wait_and_click(driver, locator, timout=30):
             page_position += 20
 
 
-def get_element(driver, localor):
-    WebDriverWait(driver, 5).until(
-        EC.element_to_be_clickable((By.XPATH, localor))
+def get_element(driver, locator):
+    WebDriverWait(driver, 10).until(
+        EC.element_to_be_clickable((By.XPATH, locator))
     )
-    return driver.find_element(By.XPATH, localor)
+    return driver.find_element(By.XPATH, locator)
 
 
 def wait_visible(driver, localor):
@@ -59,5 +59,4 @@ def wait_visible(driver, localor):
         )
     except Exception as e:
         logger.debug(e)
-        driver.close()
         return None

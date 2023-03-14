@@ -3,10 +3,11 @@ class Locators:
     m_label_elements = "//h5[text()='Elements']"
 
     # page https://demoqa.com/elements
-    e_header_elements = "//div[@class='main-header']"
+    e_header_elements = "//div[text()='Elements']"
     e_checkbox = "//span[text()='Check Box']"
 
     # https://demoqa.com/checkbox
+    c_header_elements = "//div[text()='Check Box']"
     c_label_home = "//label[@for='tree-node-home']"
     c_checkbox_home = "//label/span[text()='Home']/../../button"
     c_label_desktop = "//span[text()='Desktop']"
